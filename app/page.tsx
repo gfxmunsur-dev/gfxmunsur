@@ -2,110 +2,226 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 
-// Work items configuration with high-res design galleries
-const WORK_ITEMS = [
+// All real Behance projects curated from https://www.behance.net/mdmunsurali20
+const BEHANCE_PROJECTS = [
   {
     id: '01',
-    category: 'HOSPITALITY & F&B',
+    category: 'HOSPITALITY',
+    filterCat: 'hospitality',
     period: '2025 — 26',
-    tags: 'Brand Communication · Campaign Design · Dining Experiences',
-    title: 'Golden Tulip\nThe Grandmark Dhaka',
-    desc: 'Comprehensive visual communication for 4-star hospitality, luxury suites, fine dining, and event promotions.',
-    linkText: 'Explore project gallery',
+    tags: 'Hospitality · Social Media · Golden Tulip',
+    title: 'Skyline Tulip\nPromotional Social Media',
+    desc: 'Visual communication and promotional social campaigns for Skyline Tulip at Golden Tulip The Grandmark Dhaka.',
     className: 'wide',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1300&q=85',
-    isGallery: true,
-    galleryTitle: 'Golden Tulip The Grandmark Dhaka',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/0b8ea2256671241.Y3JvcCwxMzQyLDEwNTAsMjksMA.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256671241/Skyline-Tulip-Promotional-Social-Media-Designs',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/921aa7256671241.6ac38ed16f4f3.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a4a956256671241.6ac38ed1719b6.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/425092256671241.6ac38ed1705b3.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/188073256671241.6ac38ed1713ef.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/83c134256671241.6ac38ed170b5e.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/817902256671241.6ac38ed1723a8.jpg',
     ],
   },
   {
     id: '02',
-    category: 'MOTION & VIDEO',
-    period: 'SHOWREEL',
-    tags: 'Animation · Video Editing · 2D Typography · Storytelling',
-    title: 'Motion with\nmeaning.',
-    desc: 'From storyboards to final sound & color grade — dynamic video edits crafted to engage audiences.',
-    linkText: 'Watch showreel',
+    category: 'F&B & DINING',
+    filterCat: 'hospitality',
+    period: '2025 — 26',
+    tags: 'F&B Branding · Menu Design · Photography',
+    title: 'A Visual Journey\nof Dining Experiences',
+    desc: 'Editorial food photography direction, breakfast, brunch, lunch and dinner promotional creatives for luxury hospitality.',
     className: 'narrow',
-    image: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85',
-    isGallery: false,
-    isShowreel: true,
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/895a32256940487.Y3JvcCwxMzA5LDEwMjQsMTE5LDA.png',
+    behanceUrl: 'https://www.behance.net/gallery/256940487/A-Visual-Journey-of-Breakfast-Brunch-Lunch-Dinner',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/f83ac4256940487.6acb28f2d61f4.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a0ce43256940487.6acb28f2d80bc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/44dc28256940487.6acb28f2d793d.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/07eaf1256940487.6acb28f2d7d09.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/376658256940487.6acb28f2d6cd2.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ec858f256940487.6acb28f2d8424.jpg',
+    ],
   },
   {
     id: '03',
-    category: 'BRAND IDENTITY',
-    period: 'IDENTITY',
-    tags: 'Visual Strategy · Logo Systems · Brand Guidelines',
-    title: 'Brands built\nto be remembered.',
-    desc: 'Cohesive visual systems and logo guidelines designed to stand out across print and digital media.',
-    linkText: 'View identity gallery',
+    category: 'DIGITAL CAMPAIGNS',
+    filterCat: 'social',
+    period: '2025 — 26',
+    tags: 'Seasonal Campaigns · Advertising · Social Media',
+    title: 'Christmas Campaign\nCreatives',
+    desc: 'Festive branding suite, digital marketing creatives, and seasonal buffet promotions for Golden Tulip Dhaka.',
     className: 'narrow',
-    image: '/images/identity-1.jpg',
-    isGallery: true,
-    galleryTitle: 'Brand Identity Systems',
-    galleryImages: [
-      '/images/identity-1.jpg',
-      'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1400&q=85',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/42d169256948515.Y3JvcCw4MTUsNjM4LDQxNyww.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256948515/Christmas-Campaign-Creatives',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/85c790256948515.6acb790c640dd.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/60f616256948515.6acb790c655ab.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/83f477256948515.6acb790c64c2f.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/13be3e256948515.6acb790c646d2.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/22bb9b256948515.6acb790c650da.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/4ef5c6256948515.6acb790c66087.jpg',
     ],
   },
   {
     id: '04',
-    category: 'DIGITAL CAMPAIGNS',
-    period: 'SOCIAL · PERFORMANCE',
-    tags: 'Social Media · Paid Advertising · Content Creative',
-    title: 'Campaigns that\nconnect.',
-    desc: 'High-converting social graphics, promotional carousels, and seasonal campaign rollouts.',
-    linkText: 'Explore campaigns',
+    category: 'BEVERAGE & SUMMER',
+    filterCat: 'hospitality',
+    period: '2025',
+    tags: 'Product Advertising · Color Palette · Summer Combo',
+    title: 'Beat The Heat\nSummer Cooler Combo',
+    desc: 'Vibrant, high-energy promotional campaign for seasonal beverages, mocktails, and dining specials.',
     className: 'wide',
-    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1300&q=85',
-    isGallery: true,
-    galleryTitle: 'Digital Campaigns & Social Creatives',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/46e62e256721557.Y3JvcCw3NTAwLDU4NjYsMCwzNTQ1.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256721557/Beat-The-Heat-Summer-Cooler-Combo',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ca1653256721557.6ac4d4575c907.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/e7acb9256721557.6ac4d4575e8e9.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/5e0217256721557.6ac4d457602ef.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/9ff8bd256721557.6ac4d4575d0ad.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/e43613256721557.6ac4d4575f900.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/b48687256721557.6ac4d4575d8cc.jpg',
     ],
   },
   {
     id: '05',
-    category: 'PRINT & PACKAGING',
-    period: 'PRODUCTION',
-    tags: 'Prepress · Packaging · Editorial · Large Format',
-    title: 'Made to make\nan impression.',
-    desc: 'Precision print communication backed by industrial production and prepress manufacturing experience.',
-    linkText: 'View print projects',
-    className: '',
-    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=85',
-    isGallery: true,
-    galleryTitle: 'Print & Packaging Production',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1507842229451-79b1be886a27?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=85',
+    category: 'WELLNESS & POSTER',
+    filterCat: 'print',
+    period: '2025',
+    tags: 'Poster Design · Typography · SPA Branding',
+    title: 'Serenity & Style\nSPA Poster Design',
+    desc: 'Minimalist luxury aesthetic designed for wellness spa promotions, in-hotel posters, and digital ads.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/fc7b03256664935.Y3JvcCwzODMwLDI5OTUsMCw1Njg.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256664935/Serenity-Style-SPA-Poster-Design',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d57aeb256664935.6ac36e1f40d2b.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/3c24ef256664935.6ac36e1f41eb7.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/8e01ba256664935.6ac36e1f411fa.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3109c4256664935.6ac36e1f4163b.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/afef98256664935.6ac36e1f41a93.jpg',
     ],
   },
   {
     id: '06',
-    category: 'BEHANCE PORTFOLIO',
-    period: 'CASE STUDIES',
-    tags: 'Curated Presentations · Brand Decks · Design Explorations',
-    title: 'Curated Works\non Behance.',
-    desc: 'Browse in-depth project case studies, client presentations, and creative explorations on my official Behance profile.',
-    linkText: 'Explore on Behance',
-    linkHref: 'https://www.behance.net/mdmunsurali20',
-    className: '',
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85',
-    isGallery: false,
-    isExternal: true,
+    category: 'HOSPITALITY CAMPAIGNS',
+    filterCat: 'social',
+    period: '2025',
+    tags: 'Staycation · Room Packages · Social Media',
+    title: 'Staycation Campaigns\nSocial Media Rollout',
+    desc: 'Targeted social media suite promoting luxury room packages, weekend staycations, and suite amenities.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/70dcf9256597969.Y3JvcCwyODAwLDIxOTAsMCww.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256597969/Staycation-Campaigns-(Social-Media-Post)',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ed6d4c256597969.6ac0dea82db6b.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/641d7c256597969.6ac0dea82fa24.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/752a8d256597969.6ac0dea82eb97.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/b02acf256597969.6ac0dea82f2d0.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ab9ac3256597969.6ac0dea82e389.jpg',
+    ],
+  },
+  {
+    id: '07',
+    category: 'NATIONAL & CULTURAL',
+    filterCat: 'social',
+    period: '2025',
+    tags: 'Cultural Campaigns · Bangladesh · Victory Day',
+    title: 'National Day\nSocial Media Campaigns',
+    desc: 'Patriotic and celebratory campaign creatives for Bangladesh Victory Day, Independence Day, and cultural festivals.',
+    className: 'wide',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/e9091b256597139.Y3JvcCwzMDYyLDIzOTUsMCwxOTc.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256597139/National-Day-Social-Media-Campaigns',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/685872256597139.6ac0d825ed5d8.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a1c951256597139.6ac0d825ed9dc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/3346a0256597139.6ac0d825f1298.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/9e4f18256597139.6ac0d825f19a1.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d85783256597139.6ac0d825ee186.jpg',
+    ],
+  },
+  {
+    id: '08',
+    category: 'CAFE & DINING',
+    filterCat: 'hospitality',
+    period: '2025',
+    tags: 'Cafe Branding · Social Content · F&B',
+    title: 'Cafe De Tulip\nBranding & Visuals',
+    desc: 'Social content, signage, and coffee promotion designs crafted for Café De Tulip.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/a5bbf3256176747.Y3JvcCwxNjA1LDEyNTUsMCwzNTM.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256176747/Cafe-De-Tulip',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/projects/404/a5bbf3256176747.Y3JvcCwxNjA1LDEyNTUsMCwzNTM.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/92ad08256447477.Y3JvcCwxOTk5LDE1NjQsMCw1OTQ.jpg',
+    ],
+  },
+  {
+    id: '09',
+    category: 'LOGO & IDENTITY',
+    filterCat: 'branding',
+    period: 'BRANDING',
+    tags: 'Logo Design · Vector · Visual Identity',
+    title: 'The Bachelor Show\nIdentity & Logo Design',
+    desc: 'Bold, recognizable emblem and typography mark designed for media and entertainment production.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/cf4a7192850359.Y3JvcCw1OTE2LDQ2MjcsMCw2MTU.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/92850359/The-Bachelor-Show-Logo',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/projects/404/cf4a7192850359.Y3JvcCw1OTE2LDQ2MjcsMCw2MTU.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/0d656b85528983.Y3JvcCwxMDgwLDg0NCwwLDExNw.png',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/015a65124734551.Y3JvcCwxNzgyLDEzOTMsMCwxOTQ.jpg',
+    ],
+  },
+  {
+    id: '10',
+    category: 'EDITORIAL & PRINT',
+    filterCat: 'print',
+    period: 'PRINT',
+    tags: 'Catalog · Company Profile · Prepress',
+    title: 'Tri-Fold Company Profile\n& Catalog Design',
+    desc: 'Structured multi-page corporate catalog and tri-fold brochure engineered with precision prepress specifications.',
+    className: 'wide',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/9a08e277955335.Y3JvcCwyNjIzLDIwNTIsMjIzMyww.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/77955335/Tri-Fold-Company-ProfileCatalog-Design',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/projects/404/9a08e277955335.Y3JvcCwyNjIzLDIwNTIsMjIzMyww.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/302fab91010345.Y3JvcCwxMDM1LDgxMCwxMjUsNDg5.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/10023c86118403.Y3JvcCwzMDAwLDIzNDYsMCwyOQ.jpg',
+      'https://mir-s3-cdn-cf.behance.net/projects/404/4478c8125370963.Y3JvcCwyNTU2LDIwMDAsMjIxLDA.jpg',
+    ],
+  },
+  {
+    id: '11',
+    category: 'WEDDING PROMOTIONS',
+    filterCat: 'social',
+    period: '2025',
+    tags: 'Hospitality Weddings · Social Media · Events',
+    title: 'Wedding Social Media\nPromotions',
+    desc: 'Elegant, luxury banquet and wedding reception social campaigns designed for luxury hotel clients.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/91f84c256184297.Y3JvcCwxNDAwLDEwOTUsMCwxNTU.jpg',
+    behanceUrl: 'https://www.behance.net/gallery/256184297/Wedding-Social-Media-Promotion',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/projects/404/91f84c256184297.Y3JvcCwxNDAwLDEwOTUsMCwxNTU.jpg',
+    ],
+  },
+  {
+    id: '12',
+    category: 'BRAND IDENTITY',
+    filterCat: 'branding',
+    period: 'IDENTITY',
+    tags: 'Brand Systems · Beyond Logo · Guidelines',
+    title: 'Beyond Logo Mockup\n& Visual Identity',
+    desc: 'Contemporary minimalist logo presentation and 3D brand mockup application.',
+    className: 'narrow',
+    cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/0d656b85528983.Y3JvcCwxMDgwLDg0NCwwLDExNw.png',
+    behanceUrl: 'https://www.behance.net/gallery/85528983/Beyond-Logo-Mockup',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/projects/404/0d656b85528983.Y3JvcCwxMDgwLDg0NCwwLDExNw.png',
+      '/images/identity-1.jpg',
+    ],
   },
 ];
 
@@ -132,7 +248,6 @@ const FAQ_ITEMS = [
   },
 ];
 
-// Showreel video URL (plays in modal)
 const SHOWREEL_URL: string = 'https://www.youtube.com/watch?v=34Na4j8AVgA';
 
 export default function Home() {
@@ -141,16 +256,19 @@ export default function Home() {
   const [showreelOpen, setShowreelOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeFilter, setActiveFilter] = useState('all');
   const [lightbox, setLightbox] = useState<{
     open: boolean;
     title: string;
     images: string[];
     index: number;
+    behanceUrl: string;
   }>({
     open: false,
     title: '',
     images: [],
     index: 0,
+    behanceUrl: '',
   });
 
   const [currentYear, setCurrentYear] = useState('2026');
@@ -171,7 +289,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
 
     revealElements.forEach((el) => observer.observe(el));
@@ -224,13 +342,14 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  const openLightbox = (title: string, images: string[]) => {
+  const openLightbox = (title: string, images: string[], behanceUrl: string) => {
     if (!images || images.length === 0) return;
     setLightbox({
       open: true,
       title,
       images,
       index: 0,
+      behanceUrl,
     });
   };
 
@@ -253,6 +372,11 @@ export default function Home() {
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
+
+  const filteredProjects =
+    activeFilter === 'all'
+      ? BEHANCE_PROJECTS
+      : BEHANCE_PROJECTS.filter((p) => p.filterCat === activeFilter);
 
   // Helper to render showreel embed
   const renderShowreelEmbed = () => {
@@ -373,7 +497,7 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <div className="hero-kicker">
-                <span className="status-dot"></span> Available for creative projects · Dhaka, Bangladesh
+                <span className="status-dot"></span> Senior Designer & Visual Storyteller · Dhaka, Bangladesh
               </div>
               <h1>
                 MD.
@@ -411,17 +535,17 @@ export default function Home() {
             </div>
             <div className="hero-visual">
               <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1300&q=85"
-                alt="Creative portfolio visual, Md. Munsur Ali"
+                src="https://mir-s3-cdn-cf.behance.net/projects/404/0b8ea2256671241.Y3JvcCwxMzQyLDEwNTAsMjksMA.jpg"
+                alt="Skyline Tulip at Golden Tulip The Grandmark Dhaka by Md. Munsur Ali"
               />
-              <span className="visual-index">CREATIVE PORTFOLIO · 2026</span>
+              <span className="visual-index">BEHANCE PORTFOLIO · 2026</span>
               <div className="visual-note">
                 <div>
                   <strong>Designing with purpose.</strong>
                   <br />
-                  <span>Identity · Motion · Experience</span>
+                  <span>Hospitality · Motion · Identity</span>
                 </div>
-                <span>01 / 06</span>
+                <span>01 / 12</span>
               </div>
               <div className="hero-stamp">
                 <b>10+</b>
@@ -439,16 +563,16 @@ export default function Home() {
           <div className="wrap">
             <div className="section-head reveal" style={{ alignItems: 'flex-start' }}>
               <div>
-                <span className="eyebrow">Selected work · 01—06</span>
+                <span className="eyebrow">Real Works from Behance · 01—12</span>
                 <h2>
-                  Ideas made
+                  Selected works
                   <br />
-                  visible.
+                  & campaigns.
                 </h2>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
                 <p>
-                  A curated selection of brand identity, digital marketing, motion graphics and print production work.
+                  Directly showcasing client projects from Golden Tulip, Neways International, Café De Tulip, and commercial brands.
                 </p>
                 <a
                   href="https://www.behance.net/mdmunsurali20"
@@ -456,25 +580,61 @@ export default function Home() {
                   rel="noreferrer"
                   className="btn btn-light"
                 >
-                  Explore all works on Behance <span className="arrow">↗</span>
+                  Visit full Behance (36+ Projects) <span className="arrow">↗</span>
                 </a>
               </div>
             </div>
 
+            {/* Category Filter Pills */}
+            <div
+              className="reveal"
+              style={{
+                display: 'flex',
+                gap: '10px',
+                flexWrap: 'wrap',
+                marginBottom: '32px',
+              }}
+            >
+              {[
+                { label: 'All Projects (12)', key: 'all' },
+                { label: 'Hospitality & F&B', key: 'hospitality' },
+                { label: 'Social & Digital Campaigns', key: 'social' },
+                { label: 'Brand & Logo Identity', key: 'branding' },
+                { label: 'Print & Packaging', key: 'print' },
+              ].map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => setActiveFilter(tab.key)}
+                  style={{
+                    padding: '8px 16px',
+                    fontFamily: 'var(--mono)',
+                    fontSize: '11px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    borderRadius: '2px',
+                    border: '1px solid',
+                    borderColor:
+                      activeFilter === tab.key ? 'var(--acid)' : 'var(--line)',
+                    background:
+                      activeFilter === tab.key
+                        ? 'var(--acid)'
+                        : 'rgba(255,255,255,0.02)',
+                    color: activeFilter === tab.key ? 'var(--bg)' : 'var(--muted)',
+                    transition: 'all 0.2s ease',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Projects Grid */}
             <div className="work-grid">
-              {WORK_ITEMS.map((item) => {
+              {filteredProjects.map((item) => {
                 const handleClick = (e: React.MouseEvent) => {
-                  if (item.isExternal && item.linkHref) {
-                    window.open(item.linkHref, '_blank', 'noreferrer');
-                    return;
-                  }
-                  if (item.isShowreel) {
-                    e.preventDefault();
-                    setShowreelOpen(true);
-                  } else if (item.isGallery && item.galleryImages) {
-                    e.preventDefault();
-                    openLightbox(item.galleryTitle || '', item.galleryImages);
-                  }
+                  e.preventDefault();
+                  openLightbox(item.title.replace('\n', ' — '), item.images, item.behanceUrl);
                 };
 
                 return (
@@ -485,7 +645,7 @@ export default function Home() {
                   >
                     <div className="work-image">
                       <img
-                        src={item.image}
+                        src={item.cover}
                         alt={item.title}
                         loading="lazy"
                         onError={(e) => {
@@ -503,7 +663,7 @@ export default function Home() {
                       <h3 style={{ whiteSpace: 'pre-line' }}>{item.title}</h3>
                       <p>{item.desc}</p>
                       <span className="work-link">
-                        {item.linkText} <span>↗</span>
+                        View project gallery ({item.images.length} images) <span>↗</span>
                       </span>
                     </div>
                   </div>
@@ -804,7 +964,7 @@ export default function Home() {
               <div>
                 <span className="eyebrow">Featured project</span>
                 <h2>
-                  A hospitality brand,
+                  Golden Tulip The Grandmark,
                   <br />
                   one visual language.
                 </h2>
@@ -813,8 +973,8 @@ export default function Home() {
             <article className="feature reveal">
               <div className="feature-visual">
                 <img
-                  src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1300&q=85"
-                  alt="Golden Tulip The Grandmark Dhaka exterior"
+                  src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a0ce43256940487.6acb28f2d80bc.jpg"
+                  alt="Golden Tulip The Grandmark Dhaka dining experience by Md. Munsur Ali"
                   loading="lazy"
                 />
               </div>
@@ -824,7 +984,7 @@ export default function Home() {
                 </span>
                 <h3>Creating a consistent visual language.</h3>
                 <p className="subhead">
-                  A premium hospitality experience, expressed across every touchpoint.
+                  A premium hospitality experience, expressed across every guest touchpoint.
                 </p>
                 <dl className="feature-meta">
                   <dt>Role</dt>
@@ -864,11 +1024,11 @@ export default function Home() {
                   </a>
                   <a
                     className="btn"
-                    href="https://www.behance.net/mdmunsurali20"
+                    href="https://www.behance.net/gallery/256940487/A-Visual-Journey-of-Breakfast-Brunch-Lunch-Dinner"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    View on Behance ↗
+                    View Case Study on Behance ↗
                   </a>
                 </div>
               </div>
@@ -1190,19 +1350,21 @@ export default function Home() {
               {lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}
             </span>
             <div style={{ display: 'flex', gap: '10px' }}>
-              <a
-                href="https://www.behance.net/mdmunsurali20"
-                target="_blank"
-                rel="noreferrer"
-                className="btn"
-                style={{
-                  padding: '8px 16px',
-                  fontSize: '11px',
-                  background: 'rgba(255,255,255,0.06)',
-                }}
-              >
-                View on Behance ↗
-              </a>
+              {lightbox.behanceUrl && (
+                <a
+                  href={lightbox.behanceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn"
+                  style={{
+                    padding: '8px 16px',
+                    fontSize: '11px',
+                    background: 'rgba(255,255,255,0.06)',
+                  }}
+                >
+                  View Case Study on Behance ↗
+                </a>
+              )}
               <a
                 href="#contact"
                 onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
