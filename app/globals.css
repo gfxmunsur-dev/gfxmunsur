@@ -404,6 +404,7 @@ button {
     opacity: 0.3;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -965,7 +966,7 @@ button {
   max-width: 650px;
 }
 
-.beyond p + p {
+.beyond p+p {
   margin-top: 14px;
 }
 
@@ -1217,22 +1218,27 @@ button:focus-visible {
     grid-template-columns: 1fr 1fr;
     gap: 26px;
   }
+
   .hero-visual,
   .hero-visual img {
     min-height: 420px;
   }
+
   .work-card,
   .work-card.wide,
   .work-card.narrow {
     grid-column: span 6;
   }
+
   .about-grid,
   .beyond {
     gap: 40px;
   }
+
   .job {
     grid-template-columns: 130px 1fr;
   }
+
   .job-tags {
     grid-column: 2;
     text-align: left;
@@ -1240,9 +1246,11 @@ button:focus-visible {
     gap: 10px;
     flex-wrap: wrap;
   }
+
   .feature {
     grid-template-columns: 1fr 1fr;
   }
+
   .feature-visual {
     min-height: 500px;
   }
@@ -1252,24 +1260,30 @@ button:focus-visible {
   .wrap {
     width: min(var(--max), calc(100% - 38px));
   }
+
   .section {
     padding: 78px 0;
   }
+
   .section-head {
     display: block;
     margin-bottom: 30px;
   }
+
   .section-head p {
     margin-top: 18px;
   }
+
   .header {
     height: 66px;
   }
+
   .menu-toggle {
     display: block;
     position: relative;
     z-index: 25;
   }
+
   .nav-links {
     position: fixed;
     inset: 0;
@@ -1284,171 +1298,216 @@ button:focus-visible {
     transition: transform 0.35s;
     z-index: 24;
   }
+
   .nav-links.open {
     transform: none;
   }
+
   .nav-links a {
     font-size: 24px;
     color: var(--text);
   }
+
   .nav-links .nav-cta {
     font-size: 13px !important;
     margin-top: 12px;
   }
+
   .hero {
     padding: 55px 0 45px;
     min-height: auto;
   }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 34px;
   }
+
   .hero h1 {
     font-size: clamp(62px, 17vw, 104px);
     margin: 24px 0 18px;
   }
+
   .hero-visual,
   .hero-visual img {
     min-height: 380px;
   }
+
   .hero-stamp {
     width: 90px;
     height: 90px;
     right: -6px;
     bottom: 70px;
   }
+
   .hero-stamp b {
     font-size: 18px;
   }
+
   .work-grid {
     gap: 12px;
   }
+
   .work-card,
   .work-card.wide,
   .work-card.narrow {
     grid-column: span 12;
     min-height: 360px;
   }
+
   .work-content {
     inset: auto 20px 21px;
   }
+
   .work-top {
     top: 18px;
     left: 20px;
     right: 20px;
   }
+
   .about-grid,
   .beyond {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
   .about-aside {
     display: flex;
     align-items: center;
     gap: 14px;
   }
+
   .about-aside .big-number {
     font-size: 56px;
     margin: 0;
   }
+
   .about-copy h2 {
     font-size: clamp(42px, 12vw, 68px);
   }
+
   .about-bottom {
     gap: 10px;
   }
+
   .about-bottom b {
     font-size: 12px;
   }
+
   .services-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .service {
     min-height: 180px;
     padding: 18px;
   }
+
   .service h3 {
     font-size: 17px;
     margin-top: 26px;
   }
+
   .job {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 23px 0;
   }
+
   .job-tags {
     grid-column: auto;
   }
+
   .clients {
     justify-content: flex-start;
     gap: 20px 28px;
   }
+
   .client {
     font-size: 17px;
   }
+
   .process-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .step {
     min-height: 160px;
     padding: 18px;
   }
+
   .step h3 {
     margin-top: 25px;
   }
+
   .feature {
     grid-template-columns: 1fr;
   }
+
   .feature-visual {
     min-height: 330px;
   }
+
   .feature-copy {
     padding: 27px;
   }
+
   .reel {
     min-height: 360px;
   }
+
   .tool-grid {
     grid-template-columns: 1fr;
   }
+
   .contact {
     padding: 78px 0 65px;
   }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 34px;
   }
+
   .contact h2 {
     font-size: clamp(58px, 16vw, 100px);
   }
+
   .footer-top {
     align-items: flex-start;
     flex-direction: column;
   }
+
   .socials {
     flex-wrap: wrap;
   }
+
   .footer-bottom {
     gap: 12px;
     flex-direction: column;
   }
+
   .modal-card {
     padding: 30px 22px;
   }
 }
 
 @media (max-width: 390px) {
+
   .services-grid,
   .process-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-visual,
   .hero-visual img {
     min-height: 330px;
   }
+
   .about-bottom {
     grid-template-columns: 1fr;
   }
+
   .hero-actions .btn {
     padding: 12px;
     font-size: 11px;
@@ -1456,6 +1515,7 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1463,6 +1523,7 @@ button:focus-visible {
     transition: none !important;
     animation: none !important;
   }
+
   .reveal {
     opacity: 1;
     transform: none;

@@ -17,11 +17,11 @@ const BEHANCE_PROJECTS = [
     behanceUrl: 'https://www.behance.net/gallery/256671241/Skyline-Tulip-Promotional-Social-Media-Designs',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/921aa7256671241.6ac38ed16f4f3.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/a4a956256671241.6ac38ed1719b6.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a4a956256671241.6ac38ed1719b6.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/425092256671241.6ac38ed1705b3.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/188073256671241.6ac38ed1713ef.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/83c134256671241.6ac38ed170b5e.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/817902256671241.6ac38ed1723a8.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/83c134256671241.6ac38ed170b5e.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/817902256671241.6ac38ed1723a8.jpg',
     ],
   },
   {
@@ -36,11 +36,11 @@ const BEHANCE_PROJECTS = [
     cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/895a32256940487.Y3JvcCwxMzA5LDEwMjQsMTE5LDA.png',
     behanceUrl: 'https://www.behance.net/gallery/256940487/A-Visual-Journey-of-Breakfast-Brunch-Lunch-Dinner',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/f83ac4256940487.6acb28f2d61f4.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/a0ce43256940487.6acb28f2d80bc.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/44dc28256940487.6acb28f2d793d.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/07eaf1256940487.6acb28f2d7d09.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/376658256940487.6acb28f2d6cd2.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/f83ac4256940487.6acb28f2d61f4.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a0ce43256940487.6acb28f2d80bc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/44dc28256940487.6acb28f2d793d.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/07eaf1256940487.6acb28f2d7d09.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/376658256940487.6acb28f2d6cd2.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ec858f256940487.6acb28f2d8424.jpg',
     ],
   },
@@ -57,11 +57,11 @@ const BEHANCE_PROJECTS = [
     behanceUrl: 'https://www.behance.net/gallery/256948515/Christmas-Campaign-Creatives',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/85c790256948515.6acb790c640dd.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/60f616256948515.6acb790c655ab.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/83f477256948515.6acb790c64c2f.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/13be3e256948515.6acb790c646d2.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/22bb9b256948515.6acb790c650da.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/4ef5c6256948515.6acb790c66087.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/60f616256948515.6acb790c655ab.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/83f477256948515.6acb790c64c2f.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/13be3e256948515.6acb790c646d2.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/22bb9b256948515.6acb790c650da.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/4ef5c6256948515.6acb790c66087.jpg',
     ],
   },
   {
@@ -76,12 +76,12 @@ const BEHANCE_PROJECTS = [
     cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/46e62e256721557.Y3JvcCw3NTAwLDU4NjYsMCwzNTQ1.jpg',
     behanceUrl: 'https://www.behance.net/gallery/256721557/Beat-The-Heat-Summer-Cooler-Combo',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ca1653256721557.6ac4d4575c907.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e7acb9256721557.6ac4d4575e8e9.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e0217256721557.6ac4d457602ef.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ca1653256721557.6ac4d4575c907.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/e7acb9256721557.6ac4d4575e8e9.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/5e0217256721557.6ac4d457602ef.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/9ff8bd256721557.6ac4d4575d0ad.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e43613256721557.6ac4d4575f900.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/b48687256721557.6ac4d4575d8cc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/e43613256721557.6ac4d4575f900.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/b48687256721557.6ac4d4575d8cc.jpg',
     ],
   },
   {
@@ -96,11 +96,11 @@ const BEHANCE_PROJECTS = [
     cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/fc7b03256664935.Y3JvcCwzODMwLDI5OTUsMCw1Njg.jpg',
     behanceUrl: 'https://www.behance.net/gallery/256664935/Serenity-Style-SPA-Poster-Design',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/d57aeb256664935.6ac36e1f40d2b.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3c24ef256664935.6ac36e1f41eb7.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d57aeb256664935.6ac36e1f40d2b.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/3c24ef256664935.6ac36e1f41eb7.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/8e01ba256664935.6ac36e1f411fa.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3109c4256664935.6ac36e1f4163b.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/afef98256664935.6ac36e1f41a93.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/afef98256664935.6ac36e1f41a93.jpg',
     ],
   },
   {
@@ -115,11 +115,11 @@ const BEHANCE_PROJECTS = [
     cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/70dcf9256597969.Y3JvcCwyODAwLDIxOTAsMCww.jpg',
     behanceUrl: 'https://www.behance.net/gallery/256597969/Staycation-Campaigns-(Social-Media-Post)',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ed6d4c256597969.6ac0dea82db6b.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/641d7c256597969.6ac0dea82fa24.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/752a8d256597969.6ac0dea82eb97.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/b02acf256597969.6ac0dea82f2d0.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ab9ac3256597969.6ac0dea82e389.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ed6d4c256597969.6ac0dea82db6b.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/641d7c256597969.6ac0dea82fa24.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/752a8d256597969.6ac0dea82eb97.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/b02acf256597969.6ac0dea82f2d0.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/ab9ac3256597969.6ac0dea82e389.jpg',
     ],
   },
   {
@@ -134,11 +134,11 @@ const BEHANCE_PROJECTS = [
     cover: 'https://mir-s3-cdn-cf.behance.net/projects/404/e9091b256597139.Y3JvcCwzMDYyLDIzOTUsMCwxOTc.jpg',
     behanceUrl: 'https://www.behance.net/gallery/256597139/National-Day-Social-Media-Campaigns',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/685872256597139.6ac0d825ed5d8.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/a1c951256597139.6ac0d825ed9dc.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3346a0256597139.6ac0d825f1298.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/685872256597139.6ac0d825ed5d8.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a1c951256597139.6ac0d825ed9dc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/3346a0256597139.6ac0d825f1298.png',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/9e4f18256597139.6ac0d825f19a1.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/d85783256597139.6ac0d825ee186.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d85783256597139.6ac0d825ee186.jpg',
     ],
   },
   {
@@ -985,7 +985,7 @@ export default function Home() {
             <article className="feature reveal">
               <div className="feature-visual">
                 <img
-                  src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a0ce43256940487.6acb28f2d80bc.jpg"
+                  src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/a0ce43256940487.6acb28f2d80bc.jpg"
                   alt="Golden Tulip The Grandmark Dhaka dining experience by Md. Munsur Ali"
                   loading="lazy"
                 />
@@ -1339,78 +1339,78 @@ export default function Home() {
             ‹
           </button>
         )}
-        <figure className="lb-fig" style={{ position: 'relative' }}>
-          <img
-            key={lightbox.images[lightbox.index]}
-            src={lightbox.images[lightbox.index]}
-            alt={lightbox.title}
-            decoding="async"
-            style={{
-              minHeight: '220px',
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
-              borderRadius: '2px',
-            }}
-            onError={(e) => {
-              (e.target as HTMLImageElement).src =
-                'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1200&q=85';
-            }}
-          />
-          <figcaption
-            className="mono"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '12px',
-              marginTop: '16px',
-            }}
-          >
-            <span>
-              {lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}
-            </span>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              {lightbox.behanceUrl && (
+          <figure className="lb-fig" style={{ position: 'relative' }}>
+            <img
+              key={lightbox.images[lightbox.index]}
+              src={lightbox.images[lightbox.index]}
+              alt={lightbox.title}
+              decoding="async"
+              style={{
+                minHeight: '220px',
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '2px',
+              }}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1200&q=85';
+              }}
+            />
+            <figcaption
+              className="mono"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
+                marginTop: '16px',
+              }}
+            >
+              <span>
+                {lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}
+              </span>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                {lightbox.behanceUrl && (
+                  <a
+                    href={lightbox.behanceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn"
+                    style={{
+                      padding: '8px 16px',
+                      fontSize: '11px',
+                      background: 'rgba(255,255,255,0.06)',
+                    }}
+                  >
+                    View Case Study on Behance ↗
+                  </a>
+                )}
                 <a
-                  href={lightbox.behanceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn"
-                  style={{
-                    padding: '8px 16px',
-                    fontSize: '11px',
-                    background: 'rgba(255,255,255,0.06)',
-                  }}
+                  href="#contact"
+                  onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
+                  className="btn btn-light"
+                  style={{ padding: '8px 16px', fontSize: '11px' }}
                 >
-                  View Case Study on Behance ↗
+                  Hire for this ↗
                 </a>
-              )}
-              <a
-                href="#contact"
-                onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
-                className="btn btn-light"
-                style={{ padding: '8px 16px', fontSize: '11px' }}
-              >
-                Hire for this ↗
-              </a>
-            </div>
-          </figcaption>
-        </figure>
-        {lightbox.images.length > 1 && (
+              </div>
+            </figcaption>
+          </figure>
+          {lightbox.images.length > 1 && (
+            <button
+              className="lb-nav lb-next"
+              aria-label="Next image"
+              onClick={nextLightboxImage}
+            >
+              ›
+            </button>
+          )}
           <button
-            className="lb-nav lb-next"
-            aria-label="Next image"
-            onClick={nextLightboxImage}
+            className="modal-close"
+            aria-label="Close gallery"
+            onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
           >
-            ›
+            ×
           </button>
-        )}
-        <button
-          className="modal-close"
-          aria-label="Close gallery"
-          onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
-        >
-          ×
-        </button>
       </div>
     </>
   );
