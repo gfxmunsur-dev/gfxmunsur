@@ -967,7 +967,7 @@ export default function Home() {
             </div>
             <div className="socials">
               <a
-                href="https://www.behance.net/"
+                href="https://www.behance.net/mdmunsurali20"
                 target="_blank"
                 rel="noreferrer"
               >
