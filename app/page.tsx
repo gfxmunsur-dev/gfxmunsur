@@ -88,6 +88,20 @@ const WORK_ITEMS = [
       '/images/print-4.jpg',
     ],
   },
+  {
+    id: '06',
+    category: 'ART DIRECTION',
+    period: 'BEHANCE',
+    tags: 'Visual Systems · Conceptual · Case Studies',
+    title: 'Curated Works\non Behance.',
+    desc: 'Comprehensive portfolio case studies, presentations, and client projects.',
+    linkText: 'Explore on Behance',
+    linkHref: 'https://www.behance.net/mdmunsurali20',
+    className: '',
+    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85',
+    isGallery: false,
+    isExternal: true,
+  },
 ];
 
 // Showreel video URL: Paste your YouTube or Vimeo link, or an mp4 video URL
@@ -373,23 +387,37 @@ export default function Home() {
         {/* Selected Work */}
         <section className="section" id="work">
           <div className="wrap">
-            <div className="section-head reveal">
+            <div className="section-head reveal" style={{ alignItems: 'flex-start' }}>
               <div>
-                <span className="eyebrow">Selected work · 01—05</span>
+                <span className="eyebrow">Selected work · 01—06</span>
                 <h2>
                   Ideas made
                   <br />
                   visible.
                 </h2>
               </div>
-              <p>
-                A selection of brand, campaign and motion work across
-                hospitality, digital, print and video.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
+                <p>
+                  A selection of brand, campaign and motion work across
+                  hospitality, digital, print and video.
+                </p>
+                <a
+                  href="https://www.behance.net/mdmunsurali20"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-light"
+                >
+                  Explore all works on Behance <span className="arrow">↗</span>
+                </a>
+              </div>
             </div>
             <div className="work-grid">
               {WORK_ITEMS.map((item) => {
                 const handleClick = (e: React.MouseEvent) => {
+                  if (item.isExternal && item.linkHref) {
+                    window.open(item.linkHref, '_blank', 'noreferrer');
+                    return;
+                  }
                   if (item.isShowreel) {
                     e.preventDefault();
                     setShowreelOpen(true);
@@ -1062,8 +1090,17 @@ export default function Home() {
                 'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1200&q=85';
             }}
           />
-          <figcaption className="mono">
-            {lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}
+          <figcaption className="mono" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+            <span>{lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}</span>
+            <a
+              href="https://www.behance.net/mdmunsurali20"
+              target="_blank"
+              rel="noreferrer"
+              className="btn"
+              style={{ padding: '8px 14px', fontSize: '11px', background: 'rgba(255,255,255,0.06)' }}
+            >
+              View on Behance ↗
+            </a>
           </figcaption>
         </figure>
         {lightbox.images.length > 1 && (
