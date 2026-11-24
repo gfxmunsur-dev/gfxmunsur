@@ -2,30 +2,35 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 
-// Work items configuration
+// Work items configuration with high-res design galleries
 const WORK_ITEMS = [
   {
     id: '01',
-    category: 'HOSPITALITY',
+    category: 'HOSPITALITY & F&B',
     period: '2025 — 26',
-    tags: 'Brand communication · Campaign design · F&B',
+    tags: 'Brand Communication · Campaign Design · Dining Experiences',
     title: 'Golden Tulip\nThe Grandmark Dhaka',
-    desc: 'Premium visual communication for hospitality, dining and guest experiences.',
-    linkText: 'Explore featured project',
-    linkHref: '#featured',
+    desc: 'Comprehensive visual communication for 4-star hospitality, luxury suites, fine dining, and event promotions.',
+    linkText: 'Explore project gallery',
     className: 'wide',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1300&q=85',
-    isGallery: false,
+    isGallery: true,
+    galleryTitle: 'Golden Tulip The Grandmark Dhaka',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85',
+    ],
   },
   {
     id: '02',
     category: 'MOTION & VIDEO',
     period: 'SHOWREEL',
-    tags: 'Animation · Editing · Storytelling',
+    tags: 'Animation · Video Editing · 2D Typography · Storytelling',
     title: 'Motion with\nmeaning.',
-    desc: 'From storyboards to final delivery — video built to move people.',
+    desc: 'From storyboards to final sound & color grade — dynamic video edits crafted to engage audiences.',
     linkText: 'Watch showreel',
-    linkHref: '#reel',
     className: 'narrow',
     image: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85',
     isGallery: false,
@@ -35,66 +40,66 @@ const WORK_ITEMS = [
     id: '03',
     category: 'BRAND IDENTITY',
     period: 'IDENTITY',
-    tags: 'Strategy · Logo · Visual systems',
+    tags: 'Visual Strategy · Logo Systems · Brand Guidelines',
     title: 'Brands built\nto be remembered.',
-    desc: 'Distinctive identities made to work across every touchpoint.',
-    linkText: 'View identity projects',
+    desc: 'Cohesive visual systems and logo guidelines designed to stand out across print and digital media.',
+    linkText: 'View identity gallery',
     className: 'narrow',
     image: '/images/identity-1.jpg',
     isGallery: true,
-    galleryTitle: 'Brand identity',
+    galleryTitle: 'Brand Identity Systems',
     galleryImages: [
       '/images/identity-1.jpg',
-      '/images/identity-2.jpg',
-      '/images/identity-3.jpg',
-      '/images/identity-4.jpg',
+      'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1400&q=85',
     ],
   },
   {
     id: '04',
     category: 'DIGITAL CAMPAIGNS',
-    period: 'SOCIAL · DIGITAL',
-    tags: 'Social media · Advertising · Content',
+    period: 'SOCIAL · PERFORMANCE',
+    tags: 'Social Media · Paid Advertising · Content Creative',
     title: 'Campaigns that\nconnect.',
-    desc: 'Consistent creative for social platforms and digital advertising.',
+    desc: 'High-converting social graphics, promotional carousels, and seasonal campaign rollouts.',
     linkText: 'Explore campaigns',
     className: 'wide',
     image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1300&q=85',
     isGallery: true,
-    galleryTitle: 'Digital campaigns',
+    galleryTitle: 'Digital Campaigns & Social Creatives',
     galleryImages: [
-      '/images/campaign-1.jpg',
-      '/images/campaign-2.jpg',
-      '/images/campaign-3.jpg',
-      '/images/campaign-4.jpg',
+      'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
     ],
   },
   {
     id: '05',
-    category: 'PRINT & ADVERTISING',
-    period: 'PRINT',
-    tags: 'Editorial · Outdoor · Packaging',
+    category: 'PRINT & PACKAGING',
+    period: 'PRODUCTION',
+    tags: 'Prepress · Packaging · Editorial · Large Format',
     title: 'Made to make\nan impression.',
-    desc: 'Thoughtful print communication backed by production knowledge.',
+    desc: 'Precision print communication backed by industrial production and prepress manufacturing experience.',
     linkText: 'View print projects',
     className: '',
     image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=85',
     isGallery: true,
-    galleryTitle: 'Print & advertising',
+    galleryTitle: 'Print & Packaging Production',
     galleryImages: [
-      '/images/print-1.jpg',
-      '/images/print-2.jpg',
-      '/images/print-3.jpg',
-      '/images/print-4.jpg',
+      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1507842229451-79b1be886a27?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=85',
     ],
   },
   {
     id: '06',
-    category: 'ART DIRECTION',
-    period: 'BEHANCE',
-    tags: 'Visual Systems · Conceptual · Case Studies',
+    category: 'BEHANCE PORTFOLIO',
+    period: 'CASE STUDIES',
+    tags: 'Curated Presentations · Brand Decks · Design Explorations',
     title: 'Curated Works\non Behance.',
-    desc: 'Comprehensive portfolio case studies, presentations, and client projects.',
+    desc: 'Browse in-depth project case studies, client presentations, and creative explorations on my official Behance profile.',
     linkText: 'Explore on Behance',
     linkHref: 'https://www.behance.net/mdmunsurali20',
     className: '',
@@ -104,13 +109,38 @@ const WORK_ITEMS = [
   },
 ];
 
-// Showreel video URL: Paste your YouTube or Vimeo link, or an mp4 video URL
-const SHOWREEL_URL: string = '';
+const FAQ_ITEMS = [
+  {
+    question: 'What creative services do you offer?',
+    answer:
+      'I specialize in multidisciplinary visual design: Brand Identity & Logo Systems, 2D Motion Graphics & Animation, Promotional & Corporate Video Editing, Digital Advertising & Social Media Campaigns, and Prepress Commercial Print & Packaging Production.',
+  },
+  {
+    question: 'What is your typical project timeline?',
+    answer:
+      'Timelines vary by scope. Social media creatives and promotional reels are typically delivered within 24 to 48 hours. Comprehensive brand identity systems and full marketing campaign packages take 1 to 3 weeks with iterative feedback rounds.',
+  },
+  {
+    question: 'Do you prepare files for commercial offset print & packaging?',
+    answer:
+      'Yes. Having worked at Akij Printing & Packaging Ltd., I possess hands-on expertise in prepress requirements, CMYK/Pantone color separation, die-lines, bleed margins, spot UV, and plate-making specifications.',
+  },
+  {
+    question: 'Are you available for freelance projects or contract roles?',
+    answer:
+      'Yes, I am currently available for select freelance projects, retainer creative direction, and remote design collaborations worldwide.',
+  },
+];
+
+// Showreel video URL (plays in modal)
+const SHOWREEL_URL: string = 'https://www.youtube.com/watch?v=34Na4j8AVgA';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [showreelOpen, setShowreelOpen] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [lightbox, setLightbox] = useState<{
     open: boolean;
     title: string;
@@ -218,6 +248,12 @@ export default function Home() {
     }));
   };
 
+  const copyEmailToClipboard = () => {
+    navigator.clipboard.writeText('contact@gfxmunsur.com');
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
   // Helper to render showreel embed
   const renderShowreelEmbed = () => {
     if (!SHOWREEL_URL) {
@@ -314,6 +350,13 @@ export default function Home() {
               Showreel
             </a>
             <a
+              href="#faq"
+              className={activeSection === 'faq' ? 'active' : ''}
+              onClick={() => setMenuOpen(false)}
+            >
+              FAQ
+            </a>
+            <a
               className="nav-cta"
               href="#contact"
               onClick={() => setMenuOpen(false)}
@@ -330,8 +373,7 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <div className="hero-kicker">
-                <span className="status-dot"></span> Independent creative ·
-                Dhaka, Bangladesh
+                <span className="status-dot"></span> Available for creative projects · Dhaka, Bangladesh
               </div>
               <h1>
                 MD.
@@ -341,11 +383,10 @@ export default function Home() {
                 <em>ALI.</em>
               </h1>
               <p className="hero-role">
-                Graphic Designer · Motion Graphics Designer · Video Editor
+                Senior Graphic Designer · Motion Graphics Artist · Video Editor
               </p>
               <p className="hero-sub">
-                10+ YEARS OF EXPERIENCE CREATING VISUAL STORIES, BRAND
-                EXPERIENCES & DIGITAL CAMPAIGNS
+                10+ YEARS CRAFTING VISUAL STORIES, HOSPITALITY BRANDING & DIGITAL MARKETING CAMPAIGNS
               </p>
               <div className="hero-actions">
                 <a className="btn btn-light" href="#work">
@@ -357,6 +398,15 @@ export default function Home() {
                 >
                   Watch showreel <span className="arrow">↗</span>
                 </button>
+                <a
+                  className="btn"
+                  href="https://www.behance.net/mdmunsurali20"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ borderColor: 'rgba(214, 255, 101, 0.4)' }}
+                >
+                  Behance Profile ↗
+                </a>
               </div>
             </div>
             <div className="hero-visual">
@@ -398,8 +448,7 @@ export default function Home() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
                 <p>
-                  A selection of brand, campaign and motion work across
-                  hospitality, digital, print and video.
+                  A curated selection of brand identity, digital marketing, motion graphics and print production work.
                 </p>
                 <a
                   href="https://www.behance.net/mdmunsurali20"
@@ -411,6 +460,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
             <div className="work-grid">
               {WORK_ITEMS.map((item) => {
                 const handleClick = (e: React.MouseEvent) => {
@@ -439,7 +489,6 @@ export default function Home() {
                         alt={item.title}
                         loading="lazy"
                         onError={(e) => {
-                          // Fallback to placeholder if local file is missing
                           (e.target as HTMLImageElement).src =
                             'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1200&q=85';
                         }}
@@ -482,28 +531,25 @@ export default function Home() {
               </h2>
               <p>
                 I am a multidisciplinary creative professional with{' '}
-                <strong>10+ years of experience</strong> in Graphic Design,
-                Motion Graphics and Video Editing.
+                <strong>10+ years of professional experience</strong> across Graphic Design,
+                Motion Graphics, and Video Editing.
               </p>
               <p>
                 My work combines{' '}
                 <strong>
-                  visual storytelling, branding, digital communication and
+                  visual storytelling, strategic branding, digital marketing communication and
                   creative problem-solving
                 </strong>{' '}
-                to help organizations communicate their ideas with clarity and
-                impact.
+                to help organizations communicate their vision with elegance, clarity, and authority.
               </p>
               <p>
-                Over the years, I have worked across hospitality, corporate
-                communication, advertising, social media, food & beverage, print
-                and digital media — developing creative solutions from concept
-                to final execution.
+                Over the years, I have spearheaded creative campaigns across hospitality (Golden Tulip The Grandmark Dhaka),
+                corporate marketing (Neways International), commercial offset printing & packaging (Akij Printing & Packaging),
+                and food & beverage brands.
               </p>
               <p>
-                I believe great design is not only about making something look
-                beautiful. It is about creating a visual experience that
-                communicates the right message to the right audience.
+                I believe great design is not simply making something visually pleasing. It is about crafting an intentional
+                visual experience that resonates emotionally and drives tangible outcomes.
               </p>
               <div className="about-bottom">
                 <div>
@@ -512,11 +558,11 @@ export default function Home() {
                 </div>
                 <div>
                   <span>Focus</span>
-                  <b>Design · Motion · Film</b>
+                  <b>Design · Motion · Prepress</b>
                 </div>
                 <div>
                   <span>Approach</span>
-                  <b>Thoughtful by design</b>
+                  <b>Thoughtful & Purposeful</b>
                 </div>
               </div>
             </div>
@@ -543,50 +589,44 @@ export default function Home() {
             <div className="services-grid">
               <article className="service reveal">
                 <span className="num">01 / 06</span>
-                <h3>Graphic design</h3>
+                <h3>Graphic Design</h3>
                 <p>
-                  Branding · Campaigns · Social media · Print · Editorial ·
-                  Advertising
+                  Brand identities, visual systems, marketing collaterals, social creatives, editorial, and advertising.
                 </p>
               </article>
               <article className="service reveal">
                 <span className="num">02 / 06</span>
-                <h3>Motion graphics</h3>
+                <h3>Motion Graphics</h3>
                 <p>
-                  2D animation · Typography · Promotional graphics · Social reels ·
-                  Visual effects
+                  2D animation, kinetic typography, promotional graphics, social reels, logo reveals, and visual effects.
                 </p>
               </article>
               <article className="service reveal">
                 <span className="num">03 / 06</span>
-                <h3>Video editing</h3>
+                <h3>Video Editing</h3>
                 <p>
-                  Promotional · Social content · Corporate · Reels · Events ·
-                  Advertising
+                  Commercial spots, social video content, corporate showreels, hospitality showcases, and audio-visual syncing.
                 </p>
               </article>
               <article className="service reveal">
                 <span className="num">04 / 06</span>
-                <h3>Branding</h3>
+                <h3>Branding Systems</h3>
                 <p>
-                  Logo design · Visual identity · Brand systems · Campaign
-                  identity · Guidelines
+                  Logo design, comprehensive brand guidelines, color palettes, typography hierarchies, and stationery suites.
                 </p>
               </article>
               <article className="service reveal">
                 <span className="num">05 / 06</span>
-                <h3>Digital design</h3>
+                <h3>Digital & Ads</h3>
                 <p>
-                  Social media · Digital campaigns · Web graphics · Email · Online
-                  advertising
+                  High-converting performance marketing banners, Instagram/Facebook campaigns, web graphics, and email layouts.
                 </p>
               </article>
               <article className="service reveal">
                 <span className="num">06 / 06</span>
-                <h3>Art direction</h3>
+                <h3>Print & Prepress</h3>
                 <p>
-                  Creative concepts · Visual direction · Campaign development ·
-                  Content direction
+                  Production-ready offset files, color separations (CMYK/Pantone), packaging die-lines, spot UV, and embossing.
                 </p>
               </article>
             </div>
@@ -606,8 +646,7 @@ export default function Home() {
                 </h2>
               </div>
               <p>
-                A career spanning creative communication, marketing and
-                commercial print production.
+                A career spanning luxury hospitality, corporate marketing, and commercial print manufacturing.
               </p>
             </div>
             <div className="experience-list">
@@ -619,16 +658,13 @@ export default function Home() {
                     Golden Tulip The Grandmark Dhaka
                   </div>
                   <p>
-                    Leading and executing creative communication across
-                    hospitality, branding, digital marketing, food & beverage
-                    and promotional campaigns.
+                    Directing and executing visual communication across luxury hospitality, dining promotions, seasonal festivals,
+                    digital marketing, and corporate guest experiences.
                   </p>
                 </div>
                 <div className="job-tags">
-                  Campaigns
-                  <br />
-                  Hospitality
-                  <br />
+                  Hospitality<br />
+                  Campaigns<br />
                   Digital · Motion
                 </div>
               </article>
@@ -640,16 +676,13 @@ export default function Home() {
                     Neways International Company Limited
                   </div>
                   <p>
-                    Managed creative communication, digital content and
-                    promotional materials across multiple marketing activities.
+                    Led creative teams in formulating digital campaign assets, promotional publications, brand materials, and multimedia content.
                   </p>
                 </div>
                 <div className="job-tags">
-                  Creative
-                  <br />
-                  Marketing
-                  <br />
-                  Team coordination
+                  Creative Direction<br />
+                  Brand Marketing<br />
+                  Team Leadership
                 </div>
               </article>
               <article className="job reveal">
@@ -660,16 +693,13 @@ export default function Home() {
                     Akij Printing & Packaging Ltd.
                   </div>
                   <p>
-                    Developed practical expertise in commercial printing,
-                    prepress, production and packaging design.
+                    Mastered industrial offset printing processes, prepress plate-making, quality assurance, and commercial packaging fabrication.
                   </p>
                 </div>
                 <div className="job-tags">
-                  Prepress
-                  <br />
+                  Prepress<br />
+                  Offset Printing<br />
                   Packaging
-                  <br />
-                  Print production
                 </div>
               </article>
             </div>
@@ -717,8 +747,7 @@ export default function Home() {
                 </h2>
               </div>
               <p>
-                A considered process helps every visual idea stay connected to
-                its purpose.
+                A considered process helps every visual idea stay connected to its strategic purpose.
               </p>
             </div>
             <div className="process-grid">
@@ -726,43 +755,42 @@ export default function Home() {
                 <span className="step-num">01 — DISCOVER</span>
                 <h3>Understand</h3>
                 <p>
-                  The brand, audience, objective and communication challenge.
+                  Analyze brand values, target demographic, campaign goals, and competitive landscape.
                 </p>
               </article>
               <article className="step reveal">
                 <span className="step-num">02 — CONCEPT</span>
                 <h3>Find the idea</h3>
                 <p>
-                  Creative direction, visual language and the campaign thought.
+                  Develop visual moodboards, typography directions, and overarching campaign themes.
                 </p>
               </article>
               <article className="step reveal">
                 <span className="step-num">03 — DESIGN</span>
                 <h3>Make it clear</h3>
                 <p>
-                  Translate the concept into compelling visual communication.
+                  Execute polished vector graphics, grid-aligned layouts, and engaging visual hierarchy.
                 </p>
               </article>
               <article className="step reveal">
                 <span className="step-num">04 — ANIMATE</span>
                 <h3>Bring it to life</h3>
                 <p>
-                  Add movement, storytelling and visual rhythm where needed.
+                  Introduce fluid motion, transitions, sound effects, and rhythm to captivate viewers.
                 </p>
               </article>
               <article className="step reveal">
                 <span className="step-num">05 — REFINE</span>
-                <h3>Get the details right</h3>
+                <h3>Get details right</h3>
                 <p>
-                  Polish typography, composition, color, imagery and finish.
+                  Fine-tune kerning, color calibration, asset compression, and visual balance.
                 </p>
               </article>
               <article className="step reveal">
                 <span className="step-num">06 — DELIVER</span>
-                <h3>Ready for the world</h3>
+                <h3>Production ready</h3>
                 <p>
-                  Prepare assets for digital, social, print, video and
-                  advertising.
+                  Deliver cross-platform assets optimized for web, social, broadcast, and industrial print.
                 </p>
               </article>
             </div>
@@ -786,7 +814,7 @@ export default function Home() {
               <div className="feature-visual">
                 <img
                   src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1300&q=85"
-                  alt="Hotel exterior used as illustrative project image"
+                  alt="Golden Tulip The Grandmark Dhaka exterior"
                   loading="lazy"
                 />
               </div>
@@ -796,35 +824,31 @@ export default function Home() {
                 </span>
                 <h3>Creating a consistent visual language.</h3>
                 <p className="subhead">
-                  A premium hospitality experience, expressed across every
-                  touchpoint.
+                  A premium hospitality experience, expressed across every touchpoint.
                 </p>
                 <dl className="feature-meta">
                   <dt>Role</dt>
-                  <dd>Graphic Designer · Motion Designer · Video Editor</dd>
+                  <dd>Lead Graphic Designer · Motion Designer · Video Editor</dd>
                   <dt>Scope</dt>
                   <dd>
-                    Brand communication · Social · F&B · Campaigns · Digital ·
-                    Print · Video
+                    Brand Communication · Social Marketing · F&B Menus · Seasonal Campaigns · Print & Video
                   </dd>
                 </dl>
                 <p>
                   <strong style={{ color: 'var(--text)' }}>
-                    The challenge
+                    The challenge:
                   </strong>
                   <br />
-                  Create visually consistent communication across multiple
-                  hospitality touchpoints while maintaining a premium and
-                  recognizable brand presence.
+                  Establish visually coherent, luxurious brand communication across dining outlets, suite promotions,
+                  corporate conferences, and festive campaigns while upholding international brand standards.
                 </p>
                 <p>
                   <strong style={{ color: 'var(--text)' }}>
-                    The approach
+                    The approach:
                   </strong>
                   <br />
-                  Build a flexible visual system combining premium imagery,
-                  refined typography, contemporary layouts and campaign-specific
-                  creative concepts.
+                  Engineered an adaptable modular design system combining elegant typography, warm atmospheric photography,
+                  minimalist layout frameworks, and responsive digital ads.
                 </p>
                 <div className="feature-steps">
                   <span>Social campaigns</span>
@@ -834,9 +858,19 @@ export default function Home() {
                   <span>Menus & print</span>
                   <span>Motion & video</span>
                 </div>
-                <a className="btn" href="#contact">
-                  Discuss a similar project <span className="arrow">↗</span>
-                </a>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                  <a className="btn btn-light" href="#contact">
+                    Discuss a project <span className="arrow">↗</span>
+                  </a>
+                  <a
+                    className="btn"
+                    href="https://www.behance.net/mdmunsurali20"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View on Behance ↗
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -854,8 +888,7 @@ export default function Home() {
                   <em>One creative journey.</em>
                 </h2>
                 <p>
-                  Graphic design · Motion graphics · Video editing · Branding ·
-                  Advertising
+                  Graphic design · Motion graphics · Video editing · Branding · Advertising
                 </p>
                 <button
                   className="play-button"
@@ -864,7 +897,7 @@ export default function Home() {
                 >
                   ▶
                 </button>
-                <p style={{ marginTop: '14px' }}>Watch the showreel</p>
+                <p style={{ marginTop: '14px' }}>Click to watch showreel</p>
               </div>
             </div>
           </div>
@@ -875,7 +908,7 @@ export default function Home() {
           <div className="wrap">
             <div className="section-head reveal">
               <div>
-                <span className="eyebrow">Tools</span>
+                <span className="eyebrow">Tools & Mastery</span>
                 <h2>
                   The tools behind
                   <br />
@@ -883,57 +916,95 @@ export default function Home() {
                 </h2>
               </div>
               <p>
-                A flexible toolkit for designing, animating and delivering work
-                across platforms.
+                An industry-standard creative toolkit for producing pristine static and moving visuals.
               </p>
             </div>
             <div className="tool-grid reveal">
               <div className="tool-box">
-                <h3>Adobe Creative Cloud</h3>
+                <h3>Adobe Creative Suite</h3>
                 <div className="tool-list">
                   <span>Photoshop</span>
                   <span>Illustrator</span>
                   <span>After Effects</span>
                   <span>Premiere Pro</span>
                   <span>InDesign</span>
+                  <span>Audition</span>
                 </div>
               </div>
               <div className="tool-box">
-                <h3>3D & other tools</h3>
+                <h3>3D & Production Tools</h3>
                 <div className="tool-list">
                   <span>3ds Max</span>
                   <span>QuarkXPress</span>
-                  <span>AI creative tools</span>
-                  <span>Digital marketing platforms</span>
+                  <span>AI Creative Tools</span>
+                  <span>Prepress Plate Prep</span>
+                  <span>Digital Marketing Analytics</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
-          <div className="wrap beyond reveal">
-            <div>
-              <span className="eyebrow">Beyond design</span>
-              <h2>
-                Curious by
-                <br />
-                nature.
-              </h2>
+        {/* FAQ Section */}
+        <section className="section" id="faq">
+          <div className="wrap">
+            <div className="section-head reveal">
+              <div>
+                <span className="eyebrow">Frequently Asked Questions</span>
+                <h2>
+                  Clear answers to
+                  <br />
+                  common questions.
+                </h2>
+              </div>
+              <p>Everything you need to know about starting a creative collaboration.</p>
             </div>
-            <div>
-              <p>
-                I am interested in the intersection of{' '}
-                <strong style={{ color: 'var(--text)' }}>
-                  design, storytelling, technology and human experience.
-                </strong>
-              </p>
-              <p>
-                Outside of day-to-day design work, I explore new visual styles,
-                motion techniques, creative technologies and emerging
-                AI-assisted workflows to continuously expand my creative
-                toolkit.
-              </p>
+            <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+              {FAQ_ITEMS.map((faq, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="reveal"
+                    style={{
+                      borderBottom: '1px solid var(--line)',
+                      padding: '22px 0',
+                    }}
+                  >
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        textAlign: 'left',
+                        fontSize: '18px',
+                        fontWeight: 600,
+                        color: isOpen ? 'var(--acid)' : 'var(--text)',
+                        transition: 'color 0.2s',
+                      }}
+                    >
+                      <span>{faq.question}</span>
+                      <span style={{ fontSize: '24px', marginLeft: '16px' }}>
+                        {isOpen ? '−' : '+'}
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <p
+                        style={{
+                          marginTop: '12px',
+                          color: 'var(--muted)',
+                          fontSize: '14px',
+                          lineHeight: '1.7',
+                        }}
+                      >
+                        {faq.answer}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -951,12 +1022,25 @@ export default function Home() {
                 <em>meaningful.</em>
               </h2>
               <p className="contact-intro">
-                Have a project, campaign or creative challenge? Let&apos;s talk
-                and make something that matters.
+                Looking for brand identity, motion design, video editing or creative direction?
+                Let&apos;s discuss your next project.
               </p>
-              <a className="btn" href="mailto:contact@gfxmunsur.com">
-                Start a conversation <span className="arrow">↗</span>
-              </a>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
+                <a className="btn" href="mailto:contact@gfxmunsur.com">
+                  Start a conversation <span className="arrow">↗</span>
+                </a>
+                <button
+                  className="btn"
+                  onClick={copyEmailToClipboard}
+                  style={{
+                    background: 'transparent',
+                    borderColor: 'var(--bg)',
+                    color: 'var(--bg)',
+                  }}
+                >
+                  {copiedEmail ? '✓ Copied to clipboard!' : 'Copy Email 📋'}
+                </button>
+              </div>
             </div>
             <div className="contact-links">
               <div className="contact-row">
@@ -964,7 +1048,7 @@ export default function Home() {
                 <a href="#top">Md. Munsur Ali</a>
               </div>
               <div className="contact-row">
-                <span>Based in</span>
+                <span>Location</span>
                 <span>Dhaka, Bangladesh</span>
               </div>
               <div className="contact-row">
@@ -974,8 +1058,18 @@ export default function Home() {
                 </a>
               </div>
               <div className="contact-row">
-                <span>Phone</span>
-                <a href="tel:+880XXXXXXXXXX">+880 XXX XXX XXXX ↗</a>
+                <span>Behance</span>
+                <a
+                  href="https://www.behance.net/mdmunsurali20"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  mdmunsurali20 ↗
+                </a>
+              </div>
+              <div className="contact-row">
+                <span>Domain</span>
+                <a href="https://gfxmunsur.com">gfxmunsur.com ↗</a>
               </div>
             </div>
           </div>
@@ -989,8 +1083,7 @@ export default function Home() {
             <div>
               <div className="footer-name">MD. MUNSUR ALI</div>
               <div className="footer-role">
-                Graphic Designer · Motion Graphics Designer · Video Editor · GFX
-                Munsur
+                Senior Graphic Designer · Motion Graphics Artist · Video Editor · GFX Munsur
               </div>
             </div>
             <div className="socials">
@@ -1022,8 +1115,7 @@ export default function Home() {
           </div>
           <div className="footer-bottom">
             <span>
-              © {currentYear} Md. Munsur Ali (gfxmunsur.com). All rights
-              reserved.
+              © {currentYear} Md. Munsur Ali (gfxmunsur.com). All rights reserved.
             </span>
             <a href="#top">Back to top ↑</a>
           </div>
@@ -1048,14 +1140,8 @@ export default function Home() {
           >
             ×
           </button>
-          <h3 id="modal-title">
-            {SHOWREEL_URL ? 'Showreel' : 'Showreel coming soon.'}
-          </h3>
-          <p>
-            {SHOWREEL_URL
-              ? 'Md. Munsur Ali — selected motion and video work.'
-              : 'The showreel will appear here shortly.'}
-          </p>
+          <h3 id="modal-title">Selected Motion & Showreel</h3>
+          <p>Md. Munsur Ali — 2D motion graphics, kinetic typography, and video editing reel.</p>
           {renderShowreelEmbed()}
         </div>
       </div>
@@ -1090,17 +1176,42 @@ export default function Home() {
                 'https://images.unsplash.com/photo-1634942536790-2536a6a5d8c4?auto=format&fit=crop&w=1200&q=85';
             }}
           />
-          <figcaption className="mono" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-            <span>{lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}</span>
-            <a
-              href="https://www.behance.net/mdmunsurali20"
-              target="_blank"
-              rel="noreferrer"
-              className="btn"
-              style={{ padding: '8px 14px', fontSize: '11px', background: 'rgba(255,255,255,0.06)' }}
-            >
-              View on Behance ↗
-            </a>
+          <figcaption
+            className="mono"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '12px',
+              marginTop: '16px',
+            }}
+          >
+            <span>
+              {lightbox.title} — {lightbox.index + 1} / {lightbox.images.length}
+            </span>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <a
+                href="https://www.behance.net/mdmunsurali20"
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+                style={{
+                  padding: '8px 16px',
+                  fontSize: '11px',
+                  background: 'rgba(255,255,255,0.06)',
+                }}
+              >
+                View on Behance ↗
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setLightbox((prev) => ({ ...prev, open: false }))}
+                className="btn btn-light"
+                style={{ padding: '8px 16px', fontSize: '11px' }}
+              >
+                Hire for this ↗
+              </a>
+            </div>
           </figcaption>
         </figure>
         {lightbox.images.length > 1 && (
